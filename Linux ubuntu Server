@@ -5,7 +5,27 @@
 Note: before atach volume check  Instance Name and Device name
 4. Now Lunux open putty 
 5. Run lsblk Check this volume 
-<pre>
-out put 
+out put : <br>
 xvdz     202:6400  0   30G  0 disk 
-</pre>
+6. Format the new volume 
+sudo mkfs -t ext4 /dev/xvdz
+7. Create a mount point
+sudo mkdir /mnt/volume
+8. Mount this volume 
+sudo mount /dev/xvdz /mnt/volume
+9. Verify It’s Mounted
+df -h
+10. Mount Automatically on Reboot 
+10.1 . Get the UUID:
+11. Edit /etc/fstab:
+UUID=9298fff1-b891-4824-84b0-fd59f5ab032f /mnt/volume ext4 defaults,nofail 0 2
+12. Test your /etc/fstab configuration:
+sudo mount -a
+13. Verify the mount:
+df -h | grep /mnt/volume
+
+
+
+
+
+
