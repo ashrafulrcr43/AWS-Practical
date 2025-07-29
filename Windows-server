@@ -1,0 +1,11 @@
+# Windows Server 
+1. Create instance 2016 With pem file 
+2. wait 5 minutes to ready 
+3. select and connect with RDS 
+4. Downloard RDP Generate Password copy and past to RDP
+
+# Windows Server Volume Attached 
+1. AWS Volume Section Create 
+2. Instance Section Attach 
+2. Go to Windows Server => To to my Computer => Server and ... Disk => Right Click => bring =>nre disk ...
+
