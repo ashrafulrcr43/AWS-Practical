@@ -5,6 +5,7 @@
 Note: before atach volume check  Instance Name and Device name
 4. Now Lunux open putty 
 5. Run lsblk Check this volume 
-<pre>out put 
+<pre>
+out put 
 xvdz     202:6400  0   30G  0 disk 
 </pre>
