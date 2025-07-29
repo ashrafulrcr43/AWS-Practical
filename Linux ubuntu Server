@@ -1,0 +1,7 @@
+# Linux add Vloume 
+1. Create Instance 
+2. Connect with putty 
+3. Select Volume And Attache this volume from AWS Action 
+Note: before atach volume check  Instance Name 
+4. Now Lunux open putty 
+5. Run lsblk Check this volume 
