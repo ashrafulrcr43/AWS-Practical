@@ -2,6 +2,9 @@
 1. Create Instance 
 2. Connect with putty 
 3. Select Volume And Attache this volume from AWS Action 
-Note: before atach volume check  Instance Name 
+Note: before atach volume check  Instance Name and Device name
 4. Now Lunux open putty 
 5. Run lsblk Check this volume 
+<pre>out put 
+xvdz     202:6400  0   30G  0 disk 
+</pre>
