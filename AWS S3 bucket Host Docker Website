@@ -1,0 +1,27 @@
+# AWS S3 bucket Host Docker Website
+1. pull Docker Image 
+2. Run Docker Image 
+3. docker ps
+4. docker cp 01c0de97c48b:/usr/share/nginx/html "$HOME/Desktop/html_backup"
+# Work AWS s3 Backet 
+5. Create Backet 
+6. upload folder and move all Files To Root 
+7. Permision 
+7. Remove Check mark Block all public access
+8. add Bucket policy 
+<pre>
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowPublicReadAccess",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::finchproject/*"
+    }
+  ]
+}
+</pre>
+9. Properties section 
+Static website hosting edit and add index.html
