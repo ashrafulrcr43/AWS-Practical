@@ -1,0 +1,7 @@
+# Create Full Function VPC
+1. Create VPC, and Route 
+2. Create Private and Public subnet
+3. Create Private and Public Route
+# Create 2  EC2 Instance
+4.  Create Public And Private Instance Assign Custome Network VPCand subnet
+
