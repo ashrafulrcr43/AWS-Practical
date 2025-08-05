@@ -38,6 +38,21 @@ Create subnet
 7. Create EC2 instance 
   # public Ec2 
   # private Ec2 
+note: must use custome subnet and network vpc
+
+8. Connect private Ec2 using public Ec2 
+# naming .pem file copy desktop to public ec2 
+# permission = > chmod 400 beston.pem 
+# Connect private => ssh -i beston.pem ubuntu@12.0.2.167 / ssh -i beston.pem 12.0.2.167
+
+8. Need internet access to update some package on private ec2 
+# Create NAT gateways on VPC Option 
+ 1. Create NAT gateway
+ 2. Name => my-nat ,Subnet = public-subnet
+ 3. Elastic IP allocation ID = > Allocate Elastic IP
+9. Private Route = >Edit routes => Add route => Destination = 0.0.0.0/0 , Target= NAT gateway , my-nat 
+Note: Becarefull must add NAT gateway , my-nat not Internet gateway
+
 
 
 
