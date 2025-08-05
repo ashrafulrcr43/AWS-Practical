@@ -3,5 +3,44 @@
 2. Create Private and Public subnet
 3. Create Private and Public Route
 # Create 2  EC2 Instance
-4.  Create Public And Private Instance Assign Custome Network VPCand subnet
+4.  Create Public And Private Instance Assign Custome Network VPC and subnet
+
+
+VPC Create = ostad-vpc = 12.0.0.0/16
+Internet Getway Create = Ostad-IGW => Action => Attach 
+
+Create subnet 
+=== 
+1. select vpc 
+2. Subnet name 
+3. Availability Zone 
+4. IPv4 subnet CIDR block => 12.0.1.0/24
+
+5. Create Route 
+	1. Public Route Table
+
+  	 name: my-public-route-table
+   	VPC : ostad-vpc
+
+	2. Private Route table
+
+  	  name: my-privatec-route-table
+   	VPC : ostad-vpc
+
+
+	3. To get internet Create Rule Public Route Table 
+	 ## click my-public-route-table => Edit routes => Add route => Destination= 0.0.0.0/0 ,Target= Internet Getway ,ostad-igq = Save
+
+
+6. Select Subnet To the Route Table 
+	# on Route table => Subnet associations => Edit subnet associations => Select subnet => save
+
+7. Create EC2 instance 
+  # public Ec2 
+  # private Ec2 
+
+
+
+
+
 
