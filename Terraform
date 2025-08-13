@@ -1,1 +1,14 @@
  # How to start Terraform on AWS provider 
+# Fast install Terraform and AWS Cli 
+# Check Version 
+ 
+1. making provider <br>
+provider "aws" {
+  region     = "ap-south-1"
+  access_key = ""
+  secret_key = ""
+}
+2. Run Comment 
+   1. terrafrom init
+   2. terraform validate
+
