@@ -21,4 +21,12 @@ resource "aws_instance" "my_ec2_instance" {
     Name = "MyTerraformEC2"
   }
 }
+# Check All Paln
+terraform plan
+# Apply All 
+terraform apply
+
+
+
+
 
