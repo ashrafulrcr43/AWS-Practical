@@ -26,6 +26,7 @@ terraform plan
 # Apply All 
 terraform apply
 
+# 4. Multipule Instance Create 
 
 
 
