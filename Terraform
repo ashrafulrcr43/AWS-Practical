@@ -2,13 +2,23 @@
 # Fast install Terraform and AWS Cli 
 # Check Version 
  
-1. making provider <br>
+# 1. making provider <br>
 provider "aws" {
   region     = "ap-south-1"
   access_key = ""
   secret_key = ""
 }
-2. Run Comment 
+# 2. Run Comment To Connect AWS 
    1. terrafrom init
    2. terraform validate
+# 3. Making Resources Create Ec2 instance 
+
+resource "aws_instance" "my_ec2_instance" {
+  ami           = "ami-021a584b49225376d" 
+  instance_type = "t2.medium"
+  key_name      = "terraform" # key_name like .ppk or .pem file
+  tags = {
+    Name = "MyTerraformEC2"
+  }
+}
 
