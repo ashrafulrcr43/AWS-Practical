@@ -28,6 +28,19 @@ terraform apply
 
 # 4. Multipule Instance Create 
 
+# 5. Method 2 to connect terrafrom to AWS on Cli
+provider "aws" {
+  region     = "ap-south-1"
+}
 
-
+resource "aws_instance" "my_ec2_instance" {
+  ami           = "ami-021a584b49225376d" 
+  instance_type = "t2.medium"
+  key_name      = "terraform" # key_name like .ppk or .pem file
+  tags = {
+    Name = "MyTerraformEC2"
+  }
+}
+# Run comment to connect AWS 
+aws configure
 
