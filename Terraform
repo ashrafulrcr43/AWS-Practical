@@ -2,7 +2,7 @@
 # Fast install Terraform and AWS Cli 
 # Check Version 
  
-# 1. making provider <br>
+# 1. making provider 
 provider "aws" {
   region     = "ap-south-1"
   access_key = ""
