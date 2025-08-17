@@ -11,6 +11,7 @@ provider "aws" {
 # 2. Run Comment To Connect AWS 
    1. terrafrom init
    2. terraform validate
+
 # 3. Making Resources Create Ec2 instance 
 
 resource "aws_instance" "my_ec2_instance" {
@@ -27,7 +28,15 @@ terraform plan
 terraform apply
 
 # 4. Multipule Instance Create 
-
+resource "aws_instance" "my_ec2_instance" {
+  count         = 3
+  ami           = "ami-021a584b49225376d" 
+  instance_type = "t2.medium"
+  key_name      = "terraform"
+  tags = {
+    Name = "Server-${count.index + 1}"
+  }
+}
 # 5. Method 2 to connect terrafrom to AWS on Cli
 provider "aws" {
   region     = "ap-south-1"
