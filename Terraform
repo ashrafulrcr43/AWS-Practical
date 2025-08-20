@@ -78,5 +78,33 @@ output "instance_public_ip" {
   value = aws_instance.my_ec2_instance.public_ip
 }
 # Terraform Variable Declaration
+variables.tf
+
+variable "region" {
+  description = "AWS region to deploy resources"
+  type        = string
+  default     = "ap-south-1"
+}
+
+variable "ami" {
+  description = "AMI ID for EC2"
+  type        = string
+}
+
+variable "access_key" {
+  description = "AWS Access Key"
+  type        = string
+  sensitive   = true
+}
+
+variable "secret_key" {
+  description = "AWS Secret Key"
+  type        = string
+  sensitive   = true
+}
+# making file store access-key and secret-key
+terraform.tfvars
+access_key = ""
+secret_key = ""
 
 
