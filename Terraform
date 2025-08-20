@@ -77,7 +77,7 @@ resource "aws_instance" "my_ec2_instance" {
 output "instance_public_ip" {
   value = aws_instance.my_ec2_instance.public_ip
 }
-# Terraform Variable Declaration
+# Terraform Variable Declaration #
 variables.tf
 
 variable "region" {
@@ -88,7 +88,26 @@ variable "region" {
 
 variable "ami" {
   description = "AMI ID for EC2"
+    default     = "ami-021a584b49225376d" 
+   type        = string
+}
+variable "instance_type" {
+  description = "Type of EC2 instance"
   type        = string
+  default     = "t3.micro"
+  
+}
+variable "count" {
+  description = "Number of EC2 instances to create"
+  type        = number
+  default     = 3
+  
+}
+variable "key_name" {
+  description = "Name of the key pair to use for the instance"
+  type        = string
+  default     = "terraform"
+  
 }
 
 variable "access_key" {
@@ -102,8 +121,11 @@ variable "secret_key" {
   type        = string
   sensitive   = true
 }
+
+
 # making file store access-key and secret-key
 terraform.tfvars
+
 access_key = ""
 secret_key = ""
 
