@@ -52,4 +52,30 @@ resource "aws_instance" "my_ec2_instance" {
 }
 # Run comment to connect AWS 
 aws configure
+# Show output public ip example 
+
+output "instance_public_ip" {
+  value = aws_instance.my_ec2_instance.public_ip
+}
+# full code to show output
+
+
+provider "aws" {
+  region     = "ap-south-1"
+}
+
+
+resource "aws_instance" "my_ec2_instance" {
+  ami           = "ami-021a584b49225376d" 
+  instance_type = "t2.medium"
+  key_name      = "terraform" # key_name like .ppk or .pem file
+  tags = {
+    Name = "MyTerraformEC2"
+  }
+}
+
+output "instance_public_ip" {
+  value = aws_instance.my_ec2_instance.public_ip
+}
+
 
