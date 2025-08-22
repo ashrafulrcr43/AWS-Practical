@@ -316,9 +316,10 @@ variable "project" {
 </pre>
 
 # terraform.tfvars
+<pre>
 access_key = "AKIAVKT22COW34QHQWUC"
 secret_key = "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"
-
+</pre>
 
 
 
