@@ -13,7 +13,7 @@ provider "aws" {
    2. terraform validate
 
 # 3. Making Resources Create Ec2 instance 
-
+<pre>
 resource "aws_instance" "my_ec2_instance" {
   ami           = "ami-021a584b49225376d" 
   instance_type = "t2.medium"
@@ -22,12 +22,14 @@ resource "aws_instance" "my_ec2_instance" {
     Name = "MyTerraformEC2"
   }
 }
+</pre>
 # Check All Paln
 terraform plan
 # Apply All 
 terraform apply
 
 # 4. Multipule Instance Create 
+<pre>
 resource "aws_instance" "my_ec2_instance" {
   count         = 3
   ami           = "ami-021a584b49225376d" 
@@ -37,11 +39,14 @@ resource "aws_instance" "my_ec2_instance" {
     Name = "Server-${count.index + 1}"
   }
 }
+ </pre>
 # 5. Method 2 to connect terrafrom to AWS on Cli
+<pre>
 provider "aws" {
   region     = "ap-south-1"
 }
-
+</pre>
+<pre>
 resource "aws_instance" "my_ec2_instance" {
   ami           = "ami-021a584b49225376d" 
   instance_type = "t2.medium"
@@ -50,16 +55,18 @@ resource "aws_instance" "my_ec2_instance" {
     Name = "MyTerraformEC2"
   }
 }
+ </pre>
 # Run comment to connect AWS 
 aws configure
 # Show output public ip example 
-
+<pre>
 output "instance_public_ip" {
   value = aws_instance.my_ec2_instance.public_ip
 }
+ </pre>
+ 
 # full code to show output
-
-
+<pre>
 provider "aws" {
   region     = "ap-south-1"
 }
@@ -77,9 +84,10 @@ resource "aws_instance" "my_ec2_instance" {
 output "instance_public_ip" {
   value = aws_instance.my_ec2_instance.public_ip
 }
+ </pre>
 # Terraform Variable Declaration #
 variables.tf
-
+<pre>
 variable "region" {
   description = "AWS region to deploy resources"
   type        = string
@@ -121,16 +129,17 @@ variable "secret_key" {
   type        = string
   sensitive   = true
 }
-
+</pre>
 
 # making file store access-key and secret-key
 terraform.tfvars
-
+<pre>
 access_key = ""
 secret_key = ""
+</pre>
 
 # main.tf 
-
+<pre>
 provider "aws" {
   region = var.region
     access_key = var.access_key
@@ -146,8 +155,10 @@ resource "aws_instance" "my_ec2_instance" {
     Name = "MyTerra-variables"
   }
 }
+ </pre>
+ 
 ## Complete terraform code for Anisable 
-
+<pre>
 terraform {
   required_version = ">= 1.4.0"
   required_providers {
@@ -247,8 +258,9 @@ output "public_dns" {
   value       = aws_instance.web.public_dns
 }
 
+ </pre>
 # variables 
-
+<pre>
 variable "region" {
   description = "AWS region to deploy resources"
   type        = string
@@ -301,6 +313,7 @@ variable "project" {
   type        = string
   default     = "next-japan-ec2"
 }
+</pre>
 
 # terraform.tfvars
 access_key = "AKIAVKT22COW34QHQWUC"
